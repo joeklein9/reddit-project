@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react'
+import Article from './Components/Article'
 
 
 
@@ -6,6 +7,7 @@ function App() {
   
   const [articles, setArticles] = useState([])
   const [subreddit, setSubreddit] = useState("webdev")
+
 
   useEffect(() => {
     fetch ("https://www.reddit.com/r/webdev.json").then (res => {
@@ -29,8 +31,10 @@ function App() {
         <input type = "text" className = "input" value = "webdev" />
       </header>
       <article className='articles'>
-
       </article>
+        {
+        (articles != null) ? articles.map((article, index) => <Article key = {index} article = {article.data} />) : ""
+        }
 
     </div>
   )
