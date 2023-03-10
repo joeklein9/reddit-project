@@ -12,7 +12,7 @@ header {
   padding: 15px;
 }
 
-header .subreddit_input {
+header input {
   display: inline-block;
   color: #F3F3F3;
   font-size: 32px;
